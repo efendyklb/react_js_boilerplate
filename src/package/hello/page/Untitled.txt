@@ -1,0 +1,97 @@
+renderEditable(cellInfo) {
+        let { opt } = this.getDropDown()
+        let defaultOpt = this.state.data[cellInfo.index][cellInfo.column.id]
+        
+        return (
+          <div
+            //style={{ overflow: 'visible' }}
+            contentEditable
+            suppressContentEditableWarning
+            /*onBlur={e => {
+              const data = [...this.state.data];
+              data[cellInfo.index][cellInfo.column.id] = e.target.innerHTML;
+              this.setState({ data });
+            }}*/
+
+            /*Cell = { cellInfo => {
+                <div>
+                    tes 123
+                </div>
+            }}*/
+            /*dangerouslySetInnerHTML={{
+              __html:  __html: this.state.data[cellInfo.index][cellInfo.column.id]
+            }}*/
+          >
+          <Dropdown options={opt} onChange={(e) => this._onSelect(e, cellInfo)} value={defaultOpt} placeholder="Select an option" />
+          </div>
+        );
+       
+      }
+
+
+
+ //const onClick = ({ event, ref, data, dataFromProvider }) => console.log(dataFromProvider);
+
+          /*const MyAwesomeMenu = () => (
+              <ContextMenu id='menu_id'>
+                <Item onClick={(row) => onClick(row)}>Lorem</Item>
+                <Item onClick={(row) => onClick(row)}>Ipsum</Item>
+                <Separator />
+                <Item disabled>Dolor</Item>
+                <Separator />
+                <Submenu label="Foobar">
+                  <Item onClick={(row) => onClick(row)}>Foo</Item>
+                  <Item onClick={(row) => onClick(row)}>Bar</Item>
+                </Submenu>
+              </ContextMenu>
+          );*/
+
+const dataTest = [{
+            name: 'Tanner Linsley',
+            age: 26,
+            friend: {
+              name: 'Jason Maurer',
+              age: 23,
+            }
+          }]
+
+          const column = [{
+            Header: 'Name',
+            accessor: 'name' // String-based value accessors!
+          }, {
+            Header: 'Age',
+            accessor: 'age',
+            Cell: props => <span className='number'>{props.value}</span> // Custom cell components!
+          }, {
+            id: 'friendName', // Required because our accessor is not a string
+            Header: 'Friend Name',
+            accessor: d => d.friend.name // Custom value accessors!
+          }, {
+            Header: props => <span>Friend Age</span>, // Custom header components!
+            accessor: 'friend.age'
+          }]
+
+<ReactTable
+                    data={dataTest}
+                    columns={column}
+                    defaultPageSize={10}
+                    className="-striped -highlight"
+                />
+
+
+<Autocomplete
+                    getItemValue={(item) => item.label}
+                    items={[
+                      { label: 'apple' },
+                      { label: 'banana' },
+                      { label: 'pear' }
+                    ]}
+                    renderItem={(item, isHighlighted) =>
+                      <div style={{ background: isHighlighted ? 'lightgray' : 'white' }}>
+                        {item.label}
+                      </div>
+                    }
+                    value={this.state.value}
+                    onChange={(e) => this.state.value = e.target.value}
+                    onSelect={(val) => this.state.value = val}
+                />

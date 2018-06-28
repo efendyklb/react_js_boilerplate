@@ -1,0 +1,14 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+  font-weight: 300;
+  font-size: 14px;
+}
+
+/* untuk react table buat drop down */
+.ReactTable .rt-th, .ReactTable .rt-td {
+  overflow: visible !important;
+}
+
+/** solve issue on https://spectrum.chat/thread/bc683a0e-d88b-41f9-aee3-539c1bb3582e */
