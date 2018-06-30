@@ -1,13 +1,13 @@
 import React from 'react'
 import ReactTable from "react-table";
 import "react-table/react-table.css";
-import { makeData } from "../../core/utils/UtilsEditTable"
+import { makeData } from "../../../../core/utils/UtilsEditTable"
 
 /** utility */
 import HelloCombo from '../combo/HelloCombo'
-import { handleToast } from '../../core/utils/UtilsToast'
-import { reducerHello } from '../../core/utils/UtilsOther'
-import { HelloGridColumn } from './HelloGridColumn'
+import { handleToast } from "../../../../core/utils/UtilsToast"
+import { reducerHello } from '../../../../core/utils/UtilsOther'
+import { HelloGridColumn } from './column/HelloGridColumn'
 /** context menu */
 
 import { ContextMenu, Item, Separator, Submenu, ContextMenuProvider } from 'react-contexify';

@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-import HelloGrid from '../../../components/grid/HelloGrid'
+import HelloGrid from '../component/grid/HelloGrid'
 
 export default class About extends React.Component {
     render() {

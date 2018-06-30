@@ -28,5 +28,6 @@ const GetListRouter = () => (
         <Route path = "/app" component = {App}/>
     </div>
 );
-    
+
+export const HelloListRouter = GetListRouter;
 export default HelloRouter;
