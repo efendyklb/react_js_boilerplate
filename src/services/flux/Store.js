@@ -18,23 +18,22 @@ const pReducer = persistReducer(persistConfig, rootReducer);
 /** middleware */
 
 const sagaMiddleware = createSagaMiddleware();
-/*const reduxDevTools =
-  window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__();*/
 
-let devTools = window.__REDUX_DEVTOOLS_EXTENSION__ && 
-    window.__REDUX_DEVTOOLS_EXTENSION__();
-    if (process.env.NODE_ENV === 'prod' || process.env.NODE_ENV === 'production') {
-        devTools = a => a;
-    }
+const composeEnhancers =
+  typeof window === 'object' &&
+  window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ ?   
+    window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({
+      // Specify extension’s options like name, actionsBlacklist, actionsCreators, serialize...
+    }) : compose;
+
 
 const FinalStore = createStore(
     pReducer, //hello file
-    compose(
+    composeEnhancers(
         applyMiddleware(
             sagaMiddleware
         )
-    ),
-    devTools // di mattiin dlu
+    )
 );
 
 persistCrosstab(FinalStore, persistConfig, {
