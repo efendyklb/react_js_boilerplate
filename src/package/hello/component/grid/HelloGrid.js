@@ -10,7 +10,7 @@ import { reducerHello } from '../../../../core/utils/UtilsOther'
 import { HelloGridColumn } from './column/HelloGridColumn'
 /** context menu */
 
-import { ContextMenu, Item, Separator, Submenu, ContextMenuProvider } from 'react-contexify';
+import { ContextMenu, Item, ContextMenuProvider } from 'react-contexify';
 import 'react-contexify/dist/ReactContexify.min.css';
 
 export default class HelloGrid extends React.Component {
@@ -30,7 +30,7 @@ export default class HelloGrid extends React.Component {
         const data = [...this.state.data];
         data[cellInfo.index][cellInfo.column.id] = e.value;
         this.setState({ data });
-    }
+      }
 
       renderEditable(cellInfo) {
         return (
@@ -55,7 +55,6 @@ export default class HelloGrid extends React.Component {
         }
 
         this.setState({data: [...this.state.data, newData]});
-
       }
 
       onClick({ event, ref, data, dataFromProvider }, action) {
@@ -76,8 +75,6 @@ export default class HelloGrid extends React.Component {
 
         this.setState({data: origin})
         handleToast("data berhasil di hapus")
-
-        
       }
       
       render() {

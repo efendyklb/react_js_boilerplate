@@ -11,6 +11,8 @@ import persistConfig from './config/PersistConfig'
 /** redux persist */
 import { persistStore, persistReducer } from 'redux-persist';
 
+import persistCrosstab from './PersistCrossTab'
+
 const pReducer = persistReducer(persistConfig, rootReducer);
 
 /** middleware */
@@ -34,6 +36,11 @@ const FinalStore = createStore(
     ),
     devTools // di mattiin dlu
 );
+
+persistCrosstab(FinalStore, persistConfig, {
+    whitelist: ['helloReducer2'], // Reducers to persist crosstab.
+  })
+
 
 //sagaMiddleware.run(watcherSaga); // hello watcher file single
 sagaMiddleware.run(AllWatcher); // hello watcher file ini kumpulan worker

@@ -5,11 +5,6 @@ import Dropdown from 'react-dropdown'
 import 'react-dropdown/style.css'
 
 export default class HelloCombo extends React.Component {
-
-    constructor(props) {
-        super(props);
-
-    }
     getDropDown() {
 
         const options = [
