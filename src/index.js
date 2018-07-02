@@ -17,4 +17,11 @@ ReactDOM.render(
         </PersistGate>
     </Provider>
     , document.getElementById('root'));
-registerServiceWorker();
+
+if ((typeof window !== 'undefined' && window.location.protocol === 'https:') || window.location.hostname === 'localhost' ) {
+    registerServiceWorker();
+    console.log('service worker started')
+}
+
+// allow from http
+// open -a Google\ Chrome --args --user-data-dir=/tmp/chrome --unsafely-treat-insecure-origin-as-secure=http://slka.local

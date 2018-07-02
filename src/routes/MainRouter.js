@@ -1,6 +1,9 @@
 import React from 'react'
 import { HashRouter as Router } from "react-router-dom";
-import { HelloListRouter } from "../package/hello/HelloRouter"
+import MainRouterHandling from "./MainRouterHandling"
+
+//import { HelloListRouter } from "../package/hello/HelloRouter"
+//<HelloListRouter/>
 
 class MainRouter extends React.Component {
     render() {
@@ -8,7 +11,7 @@ class MainRouter extends React.Component {
             <Router>
                 <div>
                     {this.props.children}
-                    <HelloListRouter/>
+                    <MainRouterHandling />
                 </div>
             </Router>
         )

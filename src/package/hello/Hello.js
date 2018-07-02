@@ -38,9 +38,8 @@ class Crot extends React.Component {
         var {nama, umur} = this.props.hello
         return(
             <div>
-                nama: {nama}
+                nama: {nama} <br/>
                 umur: {umur}
-                kelamin: waria
             </div>
         )
     }
