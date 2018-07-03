@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import Carousel from '../Carousel'
+import CarouselComponent from '../CarouselComponent'
 import LoginApi from '../../../../services/apis/LoginApi'
 import { TextInput } from "../../../../core/utils/TextInput"
 
@@ -47,7 +47,7 @@ class LoginForm extends Component {
             <div> Anda sudah login </div> : 
             <div className="p-full u-p-0">
                 <div className="p-full__wrapper--full">
-                    <Carousel />
+                    <CarouselComponent />
                     <FieldGroup
                     control={this.state.loginForm}
                     render={({ get, invalid }) => (

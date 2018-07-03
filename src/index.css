@@ -1,14 +1,36 @@
-body {
-  margin: 0;
-  padding: 0;
-  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
-  font-weight: 300;
-  font-size: 14px;
-}
-
 /* untuk react table buat drop down */
 .ReactTable .rt-th, .ReactTable .rt-td {
   overflow: visible !important;
+}
+
+#jc-carousel-signup {
+  position: relative;
+}
+
+#jc-carousel-signup > div,
+.carousel .slider-wrapper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.carousel {
+  height: 100%;
+}
+
+.carousel .slider-wrapper .slide > div {
+  position: absolute;
+  width: 300%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.carousel .slider-wrapper .slide:nth-child(2) > div {
+  left: auto;
+  right: 0;
 }
 
 /** solve issue on https://spectrum.chat/thread/bc683a0e-d88b-41f9-aee3-539c1bb3582e */
